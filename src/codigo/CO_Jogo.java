@@ -1,6 +1,7 @@
 package codigo;
 
 import interfaceGrafica.IG_Erro;
+import interfaceGrafica.IG_Jogo;
 import modelo.MO_Players;
 
 public class CO_Jogo {
@@ -25,6 +26,9 @@ public class CO_Jogo {
 		if(erroLogin == 0) {
 		MO_Players MOP = new MO_Players();
 		MOP.setNomePlayer(nomeUsuario);
+			IG_Jogo IGJ = new IG_Jogo();
+				IGJ.setVisible(true);
+		
 		}
 	}
 }

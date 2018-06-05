@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import codigo.CO_Formulario;
 import codigo.CO_Jogo;
 
 import javax.swing.JLabel;
@@ -86,14 +87,16 @@ public class IG_Jogo extends JFrame {
 				CO_Jogo COT = new CO_Jogo();
 				COT.validaAcesso(nomeUsuario, categoria);
 				
+				/*if(COT.erroLogin == 0) {
+					switch(categoria):
+						case "game":
+							CO_Game COG = new IG_Jogo()
+				}
 			}
-		});
-		
+		});*/
+				
+				
 		JButton btnConfirmar = new JButton("CONFIRMAR");
-		btnConfirmar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
 		btnConfirmar.setFont(new Font("Tahoma", Font.BOLD, 16));
 		btnConfirmar.setBounds(45, 449, 148, 38);
 		pnPrincipal.add(btnConfirmar);
