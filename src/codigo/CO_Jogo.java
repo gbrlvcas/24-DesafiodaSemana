@@ -72,12 +72,13 @@ public class CO_Jogo{
 		int escolher = geraPergunta.nextInt(20);
 	
 			
-			for(int i = 0 ; i < MO_Perguntas.guardaPergunta.size(); i++) {
+			for(int i = 0 ; i < 20; i++) {
 				if(escolher != MO_Perguntas.categoriaGame.get(i).getEscolherPergunta()) {
 					MO_Perguntas MOP = new MO_Perguntas();
 					MOP.setEscolherPergunta(escolher);
 						MO_Perguntas.guardaPergunta.add(MOP);
-						selecionarPergunta = escolher;
+						
+						
 						
 				}
 						
