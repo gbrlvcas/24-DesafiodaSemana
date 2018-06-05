@@ -78,7 +78,10 @@ public class IG_TelaInicial extends JFrame {
 				
 				//Instanciar [Classe: codigo / Classe: CO_TelaInicial]
 				CO_Jogo COJ = new CO_Jogo();
-				COJ.validaAcesso(nomeUsuario, categoria);
+				COJ.validarAcesso(nomeUsuario, categoria);
+				
+	
+				
 				
 			}
 		});

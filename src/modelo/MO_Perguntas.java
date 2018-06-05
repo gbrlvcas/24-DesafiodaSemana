@@ -7,7 +7,9 @@ public class MO_Perguntas {
 	//Atributos
 	private String pergunta, alternativaA, alternativaB, alternativaC, alternativaD;
 	private char resposta;
+	private int escolherPergunta;
 	
+
 	//Métodos magicos
 	public String getPergunta() {
 		return pergunta;
@@ -45,10 +47,16 @@ public class MO_Perguntas {
 	public void setResposta(char resposta) {
 		this.resposta = resposta;
 	}
+	public int getEscolherPergunta() {
+		return escolherPergunta;
+	}
+	public void setEscolherPergunta(int escolherPergunta) {
+		this.escolherPergunta = escolherPergunta;
+	}
 	
 	//ArrayList
 	public static ArrayList<MO_Perguntas> categoriaGame = new ArrayList<>();
 	public static ArrayList<MO_Perguntas> categoriaEsporte = new ArrayList<>();
 	public static ArrayList<MO_Perguntas> categoriaMusica = new ArrayList<>();
-	
+	public static ArrayList<MO_Perguntas> guardaPergunta = new ArrayList<>();
 }
