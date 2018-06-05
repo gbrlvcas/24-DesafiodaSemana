@@ -6,8 +6,11 @@ public class MO_Players {
 
 	//Variaveis
 	private String nomePlayer;
-	private int acertosPlayer;
+	private static int acertosPlayer;
+	private static int errosPlayer;
 	
+	
+
 	
 	//Metodos magicos
 	public String getNomePlayer() {
@@ -20,10 +23,15 @@ public class MO_Players {
 		return acertosPlayer;
 	}
 	public void setAcertosPlayer(int acertosPlayer) {
-		this.acertosPlayer = acertosPlayer;
+		MO_Players.acertosPlayer = acertosPlayer;
 	}
-
+	public static int getErrosPlayer() {
+		return errosPlayer;
+	}
+	public static void setErrosPlayer(int errosPlayer) {
+		MO_Players.errosPlayer = errosPlayer;
+	}
 	
 	//ArrayList
-	ArrayList <MO_Players> Players = new ArrayList<>();
+	public static ArrayList <MO_Players> Players = new ArrayList<>();
 }
