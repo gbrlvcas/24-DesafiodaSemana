@@ -72,11 +72,12 @@ public class CO_Jogo{
 		int escolher = geraPergunta.nextInt(20);
 	
 			
-			for(int i = 0 ; i < 20 ; i++) {
+			for(int i = 0 ; i < MO_Perguntas.guardaPergunta.size(); i++) {
 				if(escolher != MO_Perguntas.categoriaGame.get(i).getEscolherPergunta()) {
 					MO_Perguntas MOP = new MO_Perguntas();
 					MOP.setEscolherPergunta(escolher);
 						MO_Perguntas.guardaPergunta.add(MOP);
+						selecionarPergunta = escolher;
 						
 				}
 						
@@ -84,15 +85,7 @@ public class CO_Jogo{
 				}
 			}
 	
-	//Método - Pegar os números randomicos
-	public int selecionaPergunta() {
-		contador++;
-		selecionarPergunta = MO_Perguntas.guardaPergunta.get(contador).getEscolherPergunta();
-		
-		
-		//Retornar
-		return selecionarPergunta;
-	}
+
 	
 	}
 

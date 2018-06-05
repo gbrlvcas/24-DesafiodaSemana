@@ -39,7 +39,7 @@ public class IG_Jogo extends JFrame {
 		pnPrincipal.setLayout(null);
 		
 		CO_Jogo COJ = new CO_Jogo();
-		JLabel lblPergunta = new JLabel(MO_Perguntas.categoriaGame.get(COJ.selecionaPergunta()).getPergunta());
+		JLabel lblPergunta = new JLabel(MO_Perguntas.categoriaGame.get(COJ.selecionarPergunta).getPergunta());
 		lblPergunta.setHorizontalAlignment(SwingConstants.LEFT);
 		lblPergunta.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblPergunta.setBounds(80, 53, 531, 32);
@@ -84,7 +84,8 @@ public class IG_Jogo extends JFrame {
 			public void mouseClicked(MouseEvent arg0) {
 				
 				CO_Jogo COJ = new CO_Jogo();
-				lblPergunta.setText(MO_Perguntas.categoriaGame.get(COJ.selecionaPergunta()).getPergunta());
+				COJ.perguntaRandomica();
+				lblPergunta.setText(MO_Perguntas.categoriaGame.get(COJ.selecionarPergunta).getPergunta());
 				
 			}
 		});
