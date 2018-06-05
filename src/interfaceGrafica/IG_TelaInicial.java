@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import codigo.CO_TelaInicial;
+import codigo.CO_Jogo;
 
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -77,8 +77,8 @@ public class IG_TelaInicial extends JFrame {
 				String categoria = comboPerguntas.getSelectedItem().toString();
 				
 				//Instanciar [Classe: codigo / Classe: CO_TelaInicial]
-				CO_TelaInicial COT = new CO_TelaInicial();
-				COT.validaAcesso(nomeUsuario, categoria);
+				CO_Jogo COJ = new CO_Jogo();
+				COJ.validaAcesso(nomeUsuario, categoria);
 				
 			}
 		});

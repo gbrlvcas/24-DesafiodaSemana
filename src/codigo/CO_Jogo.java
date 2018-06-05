@@ -2,7 +2,7 @@ package codigo;
 
 import interfaceGrafica.IG_Erro;
 
-public class CO_TelaInicial {
+public class CO_Jogo {
 
 	//Atributos
 	public static String mensagemErro = "";

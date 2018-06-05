@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import codigo.CO_TelaInicial;
+import codigo.CO_Jogo;
 
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
@@ -45,7 +45,7 @@ public class IG_Erro extends JFrame {
 		lblErro.setBounds(0, 0, 450, 26);
 		pnlErro.add(lblErro);
 		
-		JLabel lblMensagemErro = new JLabel(CO_TelaInicial.mensagemErro);
+		JLabel lblMensagemErro = new JLabel(CO_Jogo.mensagemErro);
 		lblMensagemErro.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblMensagemErro.setHorizontalAlignment(SwingConstants.CENTER);
 		lblMensagemErro.setBounds(10, 81, 430, 26);
