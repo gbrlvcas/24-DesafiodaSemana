@@ -10,7 +10,7 @@ public class MO_Players {
 	private static int errosPlayer;
 	
 	
-
+//
 	
 	//Metodos magicos
 	public String getNomePlayer() {

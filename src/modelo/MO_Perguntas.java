@@ -9,7 +9,7 @@ public class MO_Perguntas {
 	private char resposta;
 	private int escolherPergunta;
 	
-
+//
 	//Métodos magicos
 	public String getPergunta() {
 		return pergunta;

@@ -9,6 +9,6 @@ public class quiz {
 		IG_TelaInicial IGT = new IG_TelaInicial();
 			IGT.setVisible(true);
 		
-	}
+	}//
 
 }

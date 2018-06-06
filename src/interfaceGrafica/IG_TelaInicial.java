@@ -22,7 +22,7 @@ public class IG_TelaInicial extends JFrame {
 
 	private JPanel pnPrincipal;
 	private JTextField txtJogador;
-
+//
 
 
 	/**

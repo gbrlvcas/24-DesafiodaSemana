@@ -26,7 +26,7 @@ public class IG_Jogo extends JFrame {
 
 	private JPanel pnPrincipal;
 
-
+//
 
 	
 	//Interface Grafica do Jogo

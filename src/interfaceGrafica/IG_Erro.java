@@ -20,7 +20,7 @@ import java.awt.event.MouseEvent;
 public class IG_Erro extends JFrame {
 
 	private JPanel pnlErro;
-
+//
 
 	/**
 	 * Create the frame.
