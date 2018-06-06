@@ -16,9 +16,15 @@ public class CO_Jogo{
 	public static int erroJogo = 0;
 	public static String jogador = "";
 	public static int contador = 0;
+	
+	public static int contaPulos = 0;
+	public static int contadorPulos = 0;
+	
 	public static char alternativaEscolhida = 'E';
 	public static int acertos = 0;
 	public static int erros = 0;
+	
+	
 	
 	//Método - Validar acesso ao Quiz
 	public void validarAcesso(String nomePlayer, String categoria){
@@ -120,25 +126,12 @@ public class CO_Jogo{
 		}
 	}
 	
-	//Método - Contabilizar Acertos e Erros
-	public void pontuacaoJogo(){
-		
-		//For avançado
-		for(MO_Players MOP : MO_Players.Players){
-			if(jogador.equals(MOP.getNomePlayer())){
-				MOP.setAcertosPlayer(0);
-				MOP.setAcertosPlayer(acertos);
-				
-			}else{
-				MOP.setNomePlayer(jogador);
-				MOP.setAcertosPlayer(acertos);
-			}
 		}
 		
 		
-	}
 	
-	}
+	
+	
 
 			
 	

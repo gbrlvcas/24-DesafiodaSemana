@@ -56,6 +56,7 @@ public class IG_Erro extends JFrame {
 			
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
+
 				dispose();
 			}
 		});

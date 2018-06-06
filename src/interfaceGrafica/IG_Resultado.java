@@ -8,7 +8,6 @@ import javax.swing.border.EmptyBorder;
 
 import codigo.CO_Jogo;
 import modelo.MO_Perguntas;
-import modelo.MO_Players;
 
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -23,7 +22,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 
-public class IG_Jogo extends JFrame {
+public class IG_Resultado extends JFrame {
 
 	private JPanel pnPrincipal;
 
@@ -31,7 +30,7 @@ public class IG_Jogo extends JFrame {
 
 	
 	//Interface Grafica do Jogo
-	public IG_Jogo() {
+	public IG_Resultado() {
 		
 		setUndecorated(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -51,7 +50,7 @@ public class IG_Jogo extends JFrame {
 		
 		//Alternativa A
 		JLabel lblAlternativaA = new JLabel();
-		lblAlternativaA.setText(MO_Perguntas.categoriaGame.get(0).getAlternativaA());
+		lblAlternativaA.setText("Pergunta 1");
 		lblAlternativaA.setHorizontalAlignment(SwingConstants.LEFT);
 		lblAlternativaA.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblAlternativaA.setBounds(80, 126, 531, 32);
@@ -74,7 +73,7 @@ public class IG_Jogo extends JFrame {
 	
 		//Alternativa B
 		JLabel lblAlternativaB = new JLabel();
-		lblAlternativaB.setText(MO_Perguntas.categoriaGame.get(0).getAlternativaB());
+		lblAlternativaB.setText("Pergunta 1");
 		lblAlternativaB.setHorizontalAlignment(SwingConstants.LEFT);
 		lblAlternativaB.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblAlternativaB.setBounds(80, 193, 531, 32);
@@ -96,7 +95,7 @@ public class IG_Jogo extends JFrame {
 		});
 		
 		//Alternativa C
-		JLabel lblAlternativaC = new JLabel(MO_Perguntas.categoriaGame.get(0).getAlternativaC());
+		JLabel lblAlternativaC = new JLabel();
 		lblAlternativaC.setText("Pergunta 1");
 		lblAlternativaC.setHorizontalAlignment(SwingConstants.LEFT);
 		lblAlternativaC.setFont(new Font("Tahoma", Font.BOLD, 16));
@@ -119,7 +118,7 @@ public class IG_Jogo extends JFrame {
 		});
 		
 		//Alternativa D
-		JLabel lblAlternativaD = new JLabel(MO_Perguntas.categoriaGame.get(0).getAlternativaD());
+		JLabel lblAlternativaD = new JLabel();
 		lblAlternativaD.setText("Pergunta 1");
 		lblAlternativaD.setHorizontalAlignment(SwingConstants.LEFT);
 		lblAlternativaD.setFont(new Font("Tahoma", Font.BOLD, 16));
@@ -161,23 +160,9 @@ public class IG_Jogo extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				
-				//Contador para pegar os valores randomicos da ArrayList em sequencia
 				CO_Jogo.contaPulos++;
-				int indice = MO_Perguntas.guardaPergunta.get(CO_Jogo.contaPulos);
-				
-				//Alterar o texto dos labels, conforme o número randomico da ArrayList
-				lblPergunta.setText(MO_Perguntas.categoriaGame.get(indice).getPergunta());
-				lblAlternativaA.setText(MO_Perguntas.categoriaGame.get(indice).getAlternativaA());
-				lblAlternativaA.setText(MO_Perguntas.categoriaGame.get(indice).getAlternativaB());
-				lblAlternativaA.setText(MO_Perguntas.categoriaGame.get(indice).getAlternativaC());
-				lblAlternativaA.setText(MO_Perguntas.categoriaGame.get(indice).getAlternativaD());
 				
 				
-				//Contar 3 pulos
-				CO_Jogo.contadorPulos++;
-				if(CO_Jogo.contadorPulos == 3) {
-					btnPular.setVisible(false);
-				}
 				
 				
 			}
@@ -195,7 +180,9 @@ public class IG_Jogo extends JFrame {
 			
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-
+				
+				//Zerar a variavel de erro toda vez que for iniciado
+				CO_Jogo.erroJogo = 0;
 				
 				//Erro 1 - Caso usuario não selecione uma questão
 				if(CO_Jogo.alternativaEscolhida == 'E'){
@@ -211,17 +198,9 @@ public class IG_Jogo extends JFrame {
 				//Contador para pegar os valores randomicos da ArrayList em sequencia
 				CO_Jogo.contador++;
 				int indice = MO_Perguntas.guardaPergunta.get(CO_Jogo.contador);
-				
-					//Contador de pulo
-				CO_Jogo.contaPulos = CO_Jogo.contador;
 			
 				//Alterar o texto dos labels, conforme o número randomico da ArrayList
 				lblPergunta.setText(MO_Perguntas.categoriaGame.get(indice).getPergunta());
-				lblAlternativaA.setText(MO_Perguntas.categoriaGame.get(indice).getAlternativaA());
-				lblAlternativaB.setText(MO_Perguntas.categoriaGame.get(indice).getAlternativaB());
-				lblAlternativaC.setText(MO_Perguntas.categoriaGame.get(indice).getAlternativaC());
-				lblAlternativaD.setText(MO_Perguntas.categoriaGame.get(indice).getAlternativaD());
-				
 				
 				//Gravar pontuação do jogo
 				if(CO_Jogo.alternativaEscolhida == MO_Perguntas.categoriaGame.get(indice).getResposta()){
@@ -229,18 +208,11 @@ public class IG_Jogo extends JFrame {
 					System.out.println(CO_Jogo.acertos);
 				}
 				
-	
-					
+				CO_Jogo COJ = new CO_Jogo();
+				COJ.pontuacaoJogo();
+			
 				//Fechar as opcoes quando chegar as 10 questões
 				if(CO_Jogo.contador == 11){
-					
-					//Guardar pontuação
-					MO_Players MOP = new MO_Players();
-					MOP.setNomePlayer(CO_Jogo.jogador);
-					MOP.setAcertosPlayer(CO_Jogo.acertos);
-					MO_Players.Players.add(MOP);
-						
-					//Desativando os componentes
 					lblPergunta.setVisible(false);
 					lblBotaoA.setVisible(false);
 					lblBotaoB.setVisible(false);
@@ -254,12 +226,7 @@ public class IG_Jogo extends JFrame {
 					btnAjuda.setVisible(false);
 					btnPular.setVisible(false);
 				}
-				
 				}
-				
-				//Deixando variaveis no valor padrão
-				CO_Jogo.alternativaEscolhida = 'E';
-				CO_Jogo.erroJogo = 0;
 			}
 		});
 	}
