@@ -73,16 +73,15 @@ public class IG_TelaInicial extends JFrame {
 			public void mouseClicked(MouseEvent arg0) {
 				
 				//Pegar os valores
-				String nomeUsuario = txtJogador.getText();
+				String nomePlayer = txtJogador.getText();
 				String categoria = comboPerguntas.getSelectedItem().toString();
 				
 				//Instanciar [Classe: codigo / Classe: CO_TelaInicial]
 				CO_Jogo COJ = new CO_Jogo();
-				COJ.validarAcesso(nomeUsuario, categoria);
+				COJ.validarAcesso(nomePlayer, categoria);
+				CO_Jogo.contador++;
 				
 	
-				
-				
 			}
 		});
 		

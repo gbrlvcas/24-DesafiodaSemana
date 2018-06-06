@@ -12,14 +12,19 @@ public class CO_Jogo{
 	//Atributos
 	public static String mensagemErro = "";
 	public int erroLogin = 0;
-	public int selecionarPergunta;
+	
+	public static int erroJogo = 0;
+	public static String jogador = "";
 	public static int contador = 0;
+	public static char alternativaEscolhida = 'E';
+	public static int acertos = 0;
+	public static int erros = 0;
 	
 	//Método - Validar acesso ao Quiz
-	public void validarAcesso(String nomeUsuario, String categoria){
+	public void validarAcesso(String nomePlayer, String categoria){
 		
 		//Erro 1 - Usuario preenchido e categoria selecionada
-		if(nomeUsuario.equals("") || categoria.equals("Categoria")){
+		if(nomePlayer.equals("") || categoria.equals("Categoria")){
 			erroLogin = 1;
 			mensagemErro = "Preencha ou selecione os campos";
 			IG_Erro IGE = new IG_Erro();
@@ -30,7 +35,8 @@ public class CO_Jogo{
 		if(erroLogin == 0) {
 			gerarJogo(categoria);
 			perguntaRandomica();
-			comecarJogo(nomeUsuario, categoria);
+			comecarJogo(nomePlayer, categoria);
+			jogador = nomePlayer;
 			
 		}
 		
@@ -46,18 +52,67 @@ public class CO_Jogo{
 		
 		}
 	
+	//Método - Gerar número randomico
+	public void perguntaRandomica() {
+		
+		boolean valida = false;
+		Random geraPergunta = new Random();
+	
+			//Condicional
+			for(int i = 0 ; i < 13; i++) {
+				
+				//Random
+				int escolher = geraPergunta.nextInt(20);
+				
+				//Se não tiver número cadastrado no vetor, será adicionado o primeiro
+				if(i == 0){
+					MO_Perguntas.guardaPergunta.add(escolher);
+						
+				}else{
+					//Segundo for, para poder analisar todas as posicões do ArrayList.
+					for(int i2 = 0 ; i2 < MO_Perguntas.guardaPergunta.size() ; i2++){
+						
+						/*
+						 * Aqui o resultado do segundo for, será em boolean, pois a cada número que ele analisa ele retorna um valor,
+						 * se caso ele retornar false (Número do random igual a um número no vetor), então é dado um BREAK, para poder
+						 * gerar um novo número randomico.
+						 * (Obs: É usado dessa forma, pois se trocar a validação retornando boolean, por adicionar o valor randomico no ArrayList,
+						 * ele irá analisar o primeiro número, então ele ja adicionara no vetor, sem analisar os demais.
+						 */
+						
+						if(escolher == MO_Perguntas.guardaPergunta.get(i2)){
+							valida = false;
+							break;
+						
+						}else{
+							
+							valida = true;
+					}
+					
+				}
+					//Se o o numero gerado não existir no ArrayList, então será adicionado ao mesmo
+					if(valida == true){
+					MO_Perguntas.guardaPergunta.add(escolher);
+					}else{
+						
+						i--;
+					}
+			}
+						
+						
+		}
+	}
+	
 	//Método - Logar jogador
-	public void comecarJogo(String nomeUsuario, String categoria) {
+	public void comecarJogo(String nomePlayer, String categoria) {
 		
 	//Liberando acesso
 	if(erroLogin == 0) {
 		
 		//Cadastrar usuario
 		MO_Players MOP = new MO_Players();
-		MOP.setNomePlayer(nomeUsuario);
-	
-		//Gerar o jogo
-		gerarJogo(categoria);
+			MOP.setNomePlayer(nomePlayer);
+				MO_Players.Players.add(MOP);
 	
 		//Abrir o JFrame do Jogo
 		IG_Jogo IGJ = new IG_Jogo();
@@ -65,28 +120,23 @@ public class CO_Jogo{
 		}
 	}
 	
-	//Método - Gerar número randomico
-	public void perguntaRandomica() {
+	//Método - Contabilizar Acertos e Erros
+	public void pontuacaoJogo(){
 		
-		Random geraPergunta = new Random();
-		int escolher = geraPergunta.nextInt(20);
-	
-			
-			for(int i = 0 ; i < 20; i++) {
-				if(escolher != MO_Perguntas.categoriaGame.get(i).getEscolherPergunta()) {
-					MO_Perguntas MOP = new MO_Perguntas();
-					MOP.setEscolherPergunta(escolher);
-						MO_Perguntas.guardaPergunta.add(MOP);
-						
-						
-						
-				}
-						
-						
-				}
+		//For avançado
+		for(MO_Players MOP : MO_Players.Players){
+			if(jogador.equals(MOP.getNomePlayer())){
+				MOP.setAcertosPlayer(0);
+				MOP.setAcertosPlayer(acertos);
+				
+			}else{
+				MOP.setNomePlayer(jogador);
+				MOP.setAcertosPlayer(acertos);
 			}
-	
-
+		}
+		
+		
+	}
 	
 	}
 
