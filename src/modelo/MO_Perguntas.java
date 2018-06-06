@@ -56,7 +56,7 @@ public class MO_Perguntas {
 	
 	//ArrayList
 	public static ArrayList<MO_Perguntas> categoriaGame = new ArrayList<>();
-	public static ArrayList<MO_Perguntas> categoriaEsporte = new ArrayList<>();
+	public static ArrayList<MO_Perguntas> categoriaProway = new ArrayList<>();
 	public static ArrayList<MO_Perguntas> categoriaMusica = new ArrayList<>();
 	public static ArrayList<Integer> guardaPergunta = new ArrayList<>();
 }

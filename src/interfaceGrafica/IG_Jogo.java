@@ -21,6 +21,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JRadioButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
 
 
 public class IG_Jogo extends JFrame {
@@ -37,10 +38,16 @@ public class IG_Jogo extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 680, 530);
 		pnPrincipal = new JPanel();
+
 		pnPrincipal.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(pnPrincipal);
 		setLocationRelativeTo(null);
 		pnPrincipal.setLayout(null);
+		
+		JLabel lblImgPergunta = new JLabel("New label");
+		lblImgPergunta.setIcon(new ImageIcon(getClass().getResource("/Botoes_alternativas/Pergunta.jpg")));
+		lblImgPergunta.setBounds(10, 53, 40, 40);
+		pnPrincipal.add(lblImgPergunta);
 		
 		//Pergunta
 		JLabel lblPergunta = new JLabel(MO_Perguntas.categoriaGame.get(0).getPergunta());
@@ -59,6 +66,7 @@ public class IG_Jogo extends JFrame {
 		
 		//Botão [Alternativa A]
 		JLabel lblBotaoA = new JLabel("New label");
+		lblBotaoA.setIcon(new ImageIcon(getClass().getResource("/Botoes_alternativas/AlternativaA_NORMAL.jpg")));
 		lblBotaoA.setBounds(10, 124, 40, 40);
 		pnPrincipal.add(lblBotaoA);
 		
@@ -67,8 +75,14 @@ public class IG_Jogo extends JFrame {
 			
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				
+
 				CO_Jogo.alternativaEscolhida = 'A';
+				
+				lblBotaoA.setIcon(new ImageIcon(getClass().getResource("/Botoes_alternativas/AlternativaA_ESCOLHIDA.jpg")));
+				
+				
+				
+				
 			}
 		});
 	
@@ -82,6 +96,7 @@ public class IG_Jogo extends JFrame {
 		
 		//Botão [Alternativa B]
 		JLabel lblBotaoB = new JLabel("New label");
+		lblBotaoB.setIcon(new ImageIcon(getClass().getResource("/Botoes_alternativas/AlternativaB_NORMAL.jpg")));
 		lblBotaoB.setBounds(10, 191, 40, 40);
 		pnPrincipal.add(lblBotaoB);
 		
@@ -91,7 +106,12 @@ public class IG_Jogo extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				
+				
 				CO_Jogo.alternativaEscolhida = 'B';
+				
+				lblBotaoB.setIcon(new ImageIcon(getClass().getResource("/Botoes_alternativas/AlternativaB_ESCOLHIDA.jpg")));
+				
+				
 			}
 		});
 		
@@ -105,6 +125,7 @@ public class IG_Jogo extends JFrame {
 		
 		//Botão [Alternativa C]
 		JLabel lblBotaoC = new JLabel("New label");
+		lblBotaoC.setIcon(new ImageIcon(getClass().getResource("/Botoes_alternativas/AlternativaC_NORMAL.jpg")));
 		lblBotaoC.setBounds(10, 265, 40, 40);
 		pnPrincipal.add(lblBotaoC);
 		
@@ -115,6 +136,10 @@ public class IG_Jogo extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				
 				CO_Jogo.alternativaEscolhida = 'C';
+				
+				lblBotaoC.setIcon(new ImageIcon(getClass().getResource("/Botoes_alternativas/AlternativaC_ESCOLHIDA.jpg")));
+				
+				
 			}
 		});
 		
@@ -128,6 +153,7 @@ public class IG_Jogo extends JFrame {
 		
 		//Botão [Alternativa D]
 		JLabel lblBotaoD = new JLabel("New label");
+		lblBotaoD.setIcon(new ImageIcon(getClass().getResource("/Botoes_alternativas/AlternativaD_NORMAL.jpg")));
 		lblBotaoD.setBounds(10, 337, 40, 40);
 		pnPrincipal.add(lblBotaoD);
 		
@@ -138,6 +164,10 @@ public class IG_Jogo extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				
 				CO_Jogo.alternativaEscolhida = 'D';
+				
+				lblBotaoD.setIcon(new ImageIcon(getClass().getResource("/Botoes_alternativas/AlternativaD_ESCOLHIDA.jpg")));
+				
+				
 			}
 		});
 		
@@ -262,5 +292,23 @@ public class IG_Jogo extends JFrame {
 				CO_Jogo.erroJogo = 0;
 			}
 		});
+		
+		//Alternativa selecionada
+		pnPrincipal.addMouseListener(new MouseAdapter() {
+			
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				
+				if(CO_Jogo.alternativaEscolhida == 'D') {
+					lblBotaoD.setIcon(new ImageIcon(getClass().getResource("/Botoes_alternativas/AlternativaD_ESCOLHIDA.jpg")));
+					lblBotaoA.setIcon(new ImageIcon(getClass().getResource("/Botoes_alternativas/AlternativaA_NORMAL.jpg")));
+					lblBotaoB.setIcon(new ImageIcon(getClass().getResource("/Botoes_alternativas/AlternativaC_NORMAL.jpg")));
+					lblBotaoC.setIcon(new ImageIcon(getClass().getResource("/Botoes_alternativas/AlternativaD_NORMAL.jpg")));
+				}
+				
+				
+			}
+		});
+		
 	}
 }
