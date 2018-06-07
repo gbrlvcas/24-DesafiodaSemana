@@ -21,7 +21,7 @@ public class CO_Jogo{
 	
 	
 	//Método - Validar acesso ao Quiz
-	public void validarAcesso(String nomePlayer, String categoria){
+	public void iniciarJogo(String nomePlayer, String categoria){
 		
 		//Erro 1 - Usuario preenchido e categoria selecionada
 		if(nomePlayer.equals("") || categoria.equals("Categoria")){

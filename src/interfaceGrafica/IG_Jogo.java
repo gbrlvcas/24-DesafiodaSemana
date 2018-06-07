@@ -319,7 +319,7 @@ public class IG_Jogo extends JFrame {
 		btnPular.setBounds(308, 449, 128, 38);
 		pnPrincipal.add(btnPular);
 		
-		//Função botão [Pular
+		//Função botão [Pular]
 		btnPular.addMouseListener(new MouseAdapter() {
 			
 			@Override
@@ -437,23 +437,7 @@ public class IG_Jogo extends JFrame {
 				CO_Jogo.erroJogo = 0;
 			}
 		});
-		
-		//Alternativa selecionada
-		pnPrincipal.addMouseListener(new MouseAdapter() {
-			
-			@Override
-			public void mouseReleased(MouseEvent arg0) {
-				
-				if(CO_Jogo.alternativaEscolhida == 'D') {
-					lblBotaoD.setIcon(new ImageIcon(getClass().getResource("/Botoes_alternativas/AlternativaD_ESCOLHIDA.jpg")));
-					lblBotaoA.setIcon(new ImageIcon(getClass().getResource("/Botoes_alternativas/AlternativaA_NORMAL.jpg")));
-					lblBotaoB.setIcon(new ImageIcon(getClass().getResource("/Botoes_alternativas/AlternativaC_NORMAL.jpg")));
-					lblBotaoC.setIcon(new ImageIcon(getClass().getResource("/Botoes_alternativas/AlternativaD_NORMAL.jpg")));
-				}
-				
-				
-			}
-		});
+
 		
 	}
 }

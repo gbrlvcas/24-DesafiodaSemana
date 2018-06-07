@@ -67,7 +67,12 @@ public class IG_TelaInicial extends JFrame {
 			public void mouseClicked(MouseEvent arg0) {
 				
 				//Zerar o vetor caso haja algo cadastrado
+				MO_Perguntas.guardaPergunta.clear();
 				MO_Perguntas.categoriaEscolhida.clear();
+				MO_Perguntas.categoriaGame.clear();
+				MO_Perguntas.categoriaMusica.clear();
+				MO_Perguntas.categoriaProway.clear();
+				
 				
 				//Pegar os valores
 				String nomePlayer = txtJogador.getText();
@@ -75,7 +80,10 @@ public class IG_TelaInicial extends JFrame {
 				
 				//Instanciar [Classe: codigo / Classe: CO_TelaInicial]
 				CO_Jogo COJ = new CO_Jogo();
-				COJ.validarAcesso(nomePlayer, categoria);
+				COJ.iniciarJogo(nomePlayer, categoria);
+				if(COJ.erroLogin == 0) {
+				dispose();
+				}
 			}
 		});
 		
