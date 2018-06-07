@@ -60,7 +60,7 @@ public class IG_TelaInicial extends JFrame {
 		pnPrincipal.add(comboPerguntas);
 		comboPerguntas.addItem("Categoria");
 		comboPerguntas.addItem("Games");
-		comboPerguntas.addItem("Esportes");
+		comboPerguntas.addItem("Proway");
 		comboPerguntas.addItem("Musica");
 		
 		
@@ -79,7 +79,6 @@ public class IG_TelaInicial extends JFrame {
 				//Instanciar [Classe: codigo / Classe: CO_TelaInicial]
 				CO_Jogo COJ = new CO_Jogo();
 				COJ.validarAcesso(nomePlayer, categoria);
-				CO_Jogo.contador++;
 				
 	
 			}

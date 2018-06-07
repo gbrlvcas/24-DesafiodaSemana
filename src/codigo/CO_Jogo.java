@@ -8,21 +8,15 @@ import modelo.MO_Perguntas;
 import modelo.MO_Players;
 
 public class CO_Jogo{
-//
+
 	//Atributos
 	public static String mensagemErro = "";
 	public int erroLogin = 0;
-	
 	public static int erroJogo = 0;
-	public static String jogador = "";
-	public static int contador = 0;
-	
-	public static int contaPulos = 0;
-	public static int contadorPulos = 0;
-	
+
 	public static char alternativaEscolhida = 'E';
-	public static int acertos = 0;
-	public static int erros = 0;
+	
+
 	
 	
 	
@@ -42,7 +36,9 @@ public class CO_Jogo{
 			gerarJogo(categoria);
 			perguntaRandomica();
 			comecarJogo(nomePlayer, categoria);
-			jogador = nomePlayer;
+			
+			//Capturar o nome do jogador
+			IG_Jogo.jogador = nomePlayer;
 			
 		}
 		
@@ -51,11 +47,46 @@ public class CO_Jogo{
 	//Método - Gerar o jogo [Esta dentro do validar acesso]
 	public void gerarJogo(String categoria) {
 		
+		//Adicionar a categoria GAMES ao ArrayList de perguntas
 		if(categoria.equals("Games")) {
+			
 			CO_Game COG = new CO_Game();
 			COG.cadastrarPerguntar();
+			
+			
+			
+			for (MO_Perguntas MOP : MO_Perguntas.categoriaGame){
+					MO_Perguntas.categoriaEscolhida.add(MOP);
+					
+			}
+			
+			//Adicionar a categoria PROWAY ao ArrayList de perguntas
+		}else if(categoria.equals("Proway")) {
+			
+			CO_Proway COP = new CO_Proway();
+			COP.cadastrarPerguntar();
+			
+			for (MO_Perguntas MOP : MO_Perguntas.categoriaProway){
+				MO_Perguntas.categoriaEscolhida.add(MOP);
+				
+			}
+			
+			//Adicionar a categoria MUSICA ao ArrayList de perguntas
+		}else if(categoria.equals("Musica")) {
+			
+			CO_Musicas COM = new CO_Musicas();
+			COM.cadastrarPerguntar();
+			
+			System.out.println("AE");
+			
+			for (MO_Perguntas MOP : MO_Perguntas.categoriaMusica){
+				MO_Perguntas.categoriaEscolhida.add(MOP);
+				System.out.println("Teste: "+MOP.getPergunta());
+				
+			}
 		}
-		
+				
+	
 		}
 	
 	//Método - Gerar número randomico
@@ -114,12 +145,7 @@ public class CO_Jogo{
 		
 	//Liberando acesso
 	if(erroLogin == 0) {
-		
-		//Cadastrar usuario
-		MO_Players MOP = new MO_Players();
-			MOP.setNomePlayer(nomePlayer);
-				MO_Players.Players.add(MOP);
-	
+
 		//Abrir o JFrame do Jogo
 		IG_Jogo IGJ = new IG_Jogo();
 			IGJ.setVisible(true);
