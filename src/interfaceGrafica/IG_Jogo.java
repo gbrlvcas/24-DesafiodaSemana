@@ -17,6 +17,8 @@ import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.Random;
+
 import javax.swing.JCheckBox;
 import javax.swing.JRadioButton;
 import java.awt.event.ActionListener;
@@ -73,6 +75,30 @@ public class IG_Jogo extends JFrame {
 		lblCogumeloD.setIcon(new ImageIcon(getClass().getResource("/Cogumelo.png")));
 		lblCogumeloD.setBounds(25, 337, 30, 30);
 		pnPrincipal.add(lblCogumeloD);
+		
+		JLabel lblAjudaA = new JLabel("");
+		lblAjudaA.setVisible(false);
+		lblAjudaA.setIcon(new ImageIcon(getClass().getResource("/Ajuda.jpg")));
+		lblAjudaA.setBounds(20, 151, 40, 40);
+		pnPrincipal.add(lblAjudaA);
+		
+		JLabel lblAjudaB = new JLabel("");
+		lblAjudaB.setVisible(false);
+		lblAjudaB.setIcon(new ImageIcon(getClass().getResource("/Ajuda.jpg")));
+		lblAjudaB.setBounds(20, 222, 40, 40);
+		pnPrincipal.add(lblAjudaB);
+		
+		JLabel lblAjudaC = new JLabel("");
+		lblAjudaC.setVisible(false);
+		lblAjudaC.setIcon(new ImageIcon(getClass().getResource("/Ajuda.jpg")));
+		lblAjudaC.setBounds(20, 293, 40, 40);
+		pnPrincipal.add(lblAjudaC);
+		
+		JLabel lblAjudaD = new JLabel("");
+		lblAjudaD.setVisible(false);
+		lblAjudaD.setIcon(new ImageIcon(getClass().getResource("/Ajuda.jpg")));
+		lblAjudaD.setBounds(20, 364, 40, 40);
+		pnPrincipal.add(lblAjudaD);
 		
 		//Pergunta
 		JLabel lblPergunta = new JLabel(MO_Perguntas.categoriaEscolhida.get(indice).getPergunta());
@@ -213,11 +239,74 @@ public class IG_Jogo extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				
+				//Gerando número randomico
+				Random ajuda = new Random();
+				int rndAjuda = ajuda.nextInt(4);
+				
+				if(MO_Perguntas.categoriaEscolhida.get(contador).getResposta() == 'A' && rndAjuda == 0) {
+					
+				}else if(MO_Perguntas.categoriaEscolhida.get(contador).getResposta() == 'B' && rndAjuda == 0) {
+					
+				}else if(MO_Perguntas.categoriaEscolhida.get(contador).getResposta() == 'C' && rndAjuda == 0) {
+					
+				}else if(MO_Perguntas.categoriaEscolhida.get(contador).getResposta() == 'D' && rndAjuda == 0) {
+					
+				}else if(MO_Perguntas.categoriaEscolhida.get(contador).getResposta() == 'A' && rndAjuda == 2) {
+					lblAjudaB.setVisible(true);
+					lblAjudaC.setVisible(true);
+					
+				}else if(MO_Perguntas.categoriaEscolhida.get(contador).getResposta() == 'A' && rndAjuda == 3) {
+					lblAjudaB.setVisible(true);
+					lblAjudaC.setVisible(true);
+					lblAjudaD.setVisible(true);
+					
+				}else if(MO_Perguntas.categoriaEscolhida.get(contador).getResposta() == 'B' && rndAjuda == 1) {
+					lblAjudaA.setVisible(true);
+					
+				}else if(MO_Perguntas.categoriaEscolhida.get(contador).getResposta() == 'B' && rndAjuda == 2) {
+					lblAjudaA.setVisible(true);
+					lblAjudaC.setVisible(true);
+					
+				}else if(MO_Perguntas.categoriaEscolhida.get(contador).getResposta() == 'B' && rndAjuda == 3) {
+					lblAjudaA.setVisible(true);
+					lblAjudaC.setVisible(true);
+					lblAjudaD.setVisible(true);
+					
+				}else if(MO_Perguntas.categoriaEscolhida.get(contador).getResposta() == 'C' && rndAjuda == 1) {
+					lblAjudaA.setVisible(true);
+					
+				}else if(MO_Perguntas.categoriaEscolhida.get(contador).getResposta() == 'C' && rndAjuda == 2) {
+					lblAjudaA.setVisible(true);
+					lblAjudaB.setVisible(true);
+					
+				}else if(MO_Perguntas.categoriaEscolhida.get(contador).getResposta() == 'C' && rndAjuda == 3) {
+					lblAjudaA.setVisible(true);
+					lblAjudaB.setVisible(true);
+					lblAjudaD.setVisible(true);
+					
+				}else if(MO_Perguntas.categoriaEscolhida.get(contador).getResposta() == 'D' && rndAjuda == 1) {
+					lblAjudaA.setVisible(true);
+					
+				}else if(MO_Perguntas.categoriaEscolhida.get(contador).getResposta() == 'D' && rndAjuda == 2) {
+					lblAjudaA.setVisible(true);
+					lblAjudaB.setVisible(true);
+					
+				}else if(MO_Perguntas.categoriaEscolhida.get(contador).getResposta() == 'D' && rndAjuda == 3) {
+					lblAjudaA.setVisible(true);
+					lblAjudaB.setVisible(true);
+					lblAjudaC.setVisible(true);
+					
+				}
+				
+				
+				
 				//Setar os cogumelos como não visiveis
 				lblCogumeloA.setVisible(false);
 				lblCogumeloB.setVisible(false);
 				lblCogumeloC.setVisible(false);
 				lblCogumeloD.setVisible(false);
+				
+				btnAjuda.setVisible(false);
 			}
 		});
 		
@@ -333,19 +422,12 @@ public class IG_Jogo extends JFrame {
 					MOP.setAcertosPlayer(acertos);
 					MO_Players.Players.add(MOP);
 						
-					//Desativando os componentes
-					lblPergunta.setVisible(false);
-					lblBotaoA.setVisible(false);
-					lblBotaoB.setVisible(false);
-					lblBotaoC.setVisible(false);
-					lblBotaoD.setVisible(false);
-					lblAlternativaA.setVisible(false);
-					lblAlternativaB.setVisible(false);
-					lblAlternativaC.setVisible(false);
-					lblAlternativaD.setVisible(false);
-					btnConfirmar.setVisible(false);
-					btnAjuda.setVisible(false);
-					btnPular.setVisible(false);
+					//Abrindo componente do resultado
+					dispose();
+					IG_Ranking IGR = new IG_Ranking();
+					IGR.setVisible(true);
+					
+
 				}
 				
 				}

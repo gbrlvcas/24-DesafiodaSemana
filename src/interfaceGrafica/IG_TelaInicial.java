@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import codigo.CO_Jogo;
+import modelo.MO_Perguntas;
 
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -17,6 +18,8 @@ import javax.swing.JComboBox;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.ImageIcon;
+import java.awt.Color;
 
 public class IG_TelaInicial extends JFrame {
 
@@ -38,25 +41,17 @@ public class IG_TelaInicial extends JFrame {
 		setLocationRelativeTo(null);
 		pnPrincipal.setLayout(null);
 		
-		JLabel lblJogador = new JLabel("Digite seu nome");
-		lblJogador.setHorizontalAlignment(SwingConstants.CENTER);
-		lblJogador.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblJogador.setBounds(70, 247, 149, 32);
-		pnPrincipal.add(lblJogador);
-		
 		txtJogador = new JTextField();
-		txtJogador.setBounds(80, 278, 128, 32);
+		txtJogador.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		txtJogador.setBorder(null);
+		txtJogador.setBackground(new Color(255, 255, 255));
+		txtJogador.setBounds(310, 103, 128, 32);
 		pnPrincipal.add(txtJogador);
 		txtJogador.setColumns(10);
 		
-		JLabel lblCategoria = new JLabel("Categoria");
-		lblCategoria.setHorizontalAlignment(SwingConstants.CENTER);
-		lblCategoria.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblCategoria.setBounds(70, 331, 149, 32);
-		pnPrincipal.add(lblCategoria);
-		
 		JComboBox<String> comboPerguntas = new JComboBox<>();
-		comboPerguntas.setBounds(80, 366, 128, 38);
+		comboPerguntas.setBorder(null);
+		comboPerguntas.setBounds(310, 213, 128, 38);
 		pnPrincipal.add(comboPerguntas);
 		comboPerguntas.addItem("Categoria");
 		comboPerguntas.addItem("Games");
@@ -65,12 +60,14 @@ public class IG_TelaInicial extends JFrame {
 		
 		
 		//Botão [Jogar]
-		JButton btnJogar = new JButton("JOGAR");
+		JLabel btnJogar = new JLabel("");
 		btnJogar.addMouseListener(new MouseAdapter() {
 			
-			//Ação do botão [Clique / Jogar]
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
+				
+				//Zerar o vetor caso haja algo cadastrado
+				MO_Perguntas.categoriaEscolhida.clear();
 				
 				//Pegar os valores
 				String nomePlayer = txtJogador.getText();
@@ -79,13 +76,16 @@ public class IG_TelaInicial extends JFrame {
 				//Instanciar [Classe: codigo / Classe: CO_TelaInicial]
 				CO_Jogo COJ = new CO_Jogo();
 				COJ.validarAcesso(nomePlayer, categoria);
-				
-	
 			}
 		});
 		
 		btnJogar.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnJogar.setBounds(80, 449, 128, 38);
+		btnJogar.setBounds(314, 266, 119, 38);
 		pnPrincipal.add(btnJogar);
+		
+		JLabel lblBackGround = new JLabel("");
+		lblBackGround.setIcon(new ImageIcon("C:\\Users\\Gbrlvcas\\Desktop\\Programacao\\24-DesafiodaSemana\\resources\\BG_TelaInicial3.jpg"));
+		lblBackGround.setBounds(0, 0, 680, 530);
+		pnPrincipal.add(lblBackGround);
 	}
 }
