@@ -16,6 +16,8 @@ import java.awt.Color;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.ImageIcon;
+import javax.swing.border.LineBorder;
 
 public class IG_Erro extends JFrame {
 
@@ -30,7 +32,7 @@ public class IG_Erro extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 189);
 		pnlErro = new JPanel();
-		pnlErro.setBorder(new EmptyBorder(5, 5, 5, 5));
+		pnlErro.setBorder(new LineBorder(new Color(0, 0, 0), 3));
 		setContentPane(pnlErro);
 		setLocationRelativeTo(null);
 		pnlErro.setLayout(null);
@@ -51,20 +53,28 @@ public class IG_Erro extends JFrame {
 		lblMensagemErro.setBounds(10, 81, 430, 26);
 		pnlErro.add(lblMensagemErro);
 		
-		JButton btnSair = new JButton("SAIR");
+		//Botão [Sair]
+		JLabel btnSair = new JLabel("");
 		btnSair.addMouseListener(new MouseAdapter() {
 			
+			//Função do botão [Clique / Sair]
 			@Override
-			public void mouseClicked(MouseEvent arg0) {
-
+			public void mouseClicked(MouseEvent e) {
+				
 				dispose();
 			}
 		});
 		btnSair.setBackground(Color.DARK_GRAY);
 		btnSair.setForeground(Color.WHITE);
 		btnSair.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnSair.setBounds(159, 134, 131, 44);
+		btnSair.setBounds(159, 130, 131, 44);
 		pnlErro.add(btnSair);
+		
+		JLabel Background = new JLabel("");
+		Background.setBorder(new LineBorder(new Color(0, 0, 0)));
+		Background.setIcon(new ImageIcon("C:\\Users\\Gbrlvcas\\Desktop\\Programacao\\24-DesafiodaSemana\\resources\\BG_Erro2.jpg"));
+		Background.setBounds(0, 26, 450, 163);
+		pnlErro.add(Background);
 	}
 
 }

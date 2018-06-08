@@ -9,6 +9,7 @@ import javax.swing.border.EmptyBorder;
 
 import codigo.CO_Jogo;
 import modelo.MO_Perguntas;
+import modelo.MO_Players;
 
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -61,6 +62,11 @@ public class IG_TelaInicial extends JFrame {
 		
 		//Botão [Jogar]
 		JLabel btnJogar = new JLabel("");
+		btnJogar.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnJogar.setBounds(314, 266, 119, 38);
+		pnPrincipal.add(btnJogar);
+		
+		//Botão [Jogar]
 		btnJogar.addMouseListener(new MouseAdapter() {
 			
 			@Override
@@ -87,12 +93,35 @@ public class IG_TelaInicial extends JFrame {
 			}
 		});
 		
-		btnJogar.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnJogar.setBounds(314, 266, 119, 38);
-		pnPrincipal.add(btnJogar);
+		//Botão [Ranking]
+		JLabel btnRanking = new JLabel("");
+		btnRanking.setBounds(340, 430, 69, 84);
+		pnPrincipal.add(btnRanking);
+		btnRanking.addMouseListener(new MouseAdapter() {
+			
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+				if(MO_Players.Players.isEmpty()) {
+					CO_Jogo.mensagemErro = "Deve haver um jogador no rank";
+					IG_Erro IGE = new IG_Erro();
+					IGE.setVisible(true);
+					
+				}else {
+				IG_Ranking IGR = new IG_Ranking();
+				IGR.setVisible(true);
+				dispose();
+				}
+			}
+		});
+
 		
+
+		
+		
+
 		JLabel lblBackGround = new JLabel("");
-		lblBackGround.setIcon(new ImageIcon("C:\\Users\\Gbrlvcas\\Desktop\\Programacao\\24-DesafiodaSemana\\resources\\BG_TelaInicial3.jpg"));
+		lblBackGround.setIcon(new ImageIcon(getClass().getResource("/BG_TelaInicial3.jpg")));
 		lblBackGround.setBounds(0, 0, 680, 530);
 		pnPrincipal.add(lblBackGround);
 	}

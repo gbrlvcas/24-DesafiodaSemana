@@ -93,7 +93,7 @@ public class IG_Ranking extends JFrame {
 		
 		JLabel lblBackground = new JLabel("");
 		lblBackground.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblBackground.setIcon(new ImageIcon("C:\\Users\\Gbrlvcas\\Desktop\\Programacao\\24-DesafiodaSemana\\resources\\BG_Ranking2.jpg"));
+		lblBackground.setIcon(new ImageIcon(getClass().getResource("/BG_Ranking2.jpg")));
 		lblBackground.setBounds(0, 0, 680, 530);
 		pnPrincipal.add(lblBackground);
 	}

@@ -227,13 +227,22 @@ public class IG_Jogo extends JFrame {
 			}
 		});
 		
+		//Label para bloquear o botão de ajuda
+		JLabel lblBloquearAjuda = new JLabel("");
+		lblBloquearAjuda.setVisible(false);
+		lblBloquearAjuda.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblBloquearAjuda.setBounds(472, 449, 128, 46);
+		pnPrincipal.add(lblBloquearAjuda);
+		
 
 				
 		//Botão [Ajuda]
-		JButton btnAjuda = new JButton("AJUDA");
+		JLabel btnAjuda = new JLabel("");
 		btnAjuda.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnAjuda.setBounds(451, 449, 128, 38);
+		btnAjuda.setBounds(472, 449, 128, 46);
 		pnPrincipal.add(btnAjuda);
+		
+		//Função botão [Ajuda]
 		btnAjuda.addMouseListener(new MouseAdapter() {
 			
 			@Override
@@ -305,138 +314,167 @@ public class IG_Jogo extends JFrame {
 				lblCogumeloB.setVisible(false);
 				lblCogumeloC.setVisible(false);
 				lblCogumeloD.setVisible(false);
-				
+			
+				//Deixando botão de ajuda não visivel
 				btnAjuda.setVisible(false);
+				
+				//Bloqueando o botão de Ajuda
+				lblBloquearAjuda.setVisible(true);
+				lblBloquearAjuda.setIcon(new ImageIcon(getClass().getResource("/Bloquear_Botao.jpg")));
 			}
 		});
 		
-
 		
+		//Label para bloquear o botão de pular
+		JLabel lblBloquearPular = new JLabel("");
+		lblBloquearPular.setVisible(false);
+		lblBloquearPular.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblBloquearPular.setBounds(342, 449, 119, 46);
+		pnPrincipal.add(lblBloquearPular);
 		
+	
 		//Botão [Pular]
-		JButton btnPular = new JButton("PULAR");
+		JLabel btnPular = new JLabel("");
 		btnPular.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnPular.setBounds(308, 449, 128, 38);
+		btnPular.setBounds(342, 449, 119, 46);
 		pnPrincipal.add(btnPular);
 		
 		//Função botão [Pular]
-		btnPular.addMouseListener(new MouseAdapter() {
-			
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				
-				//Setar os cogumelos como não visiveis
-				lblCogumeloA.setVisible(false);
-				lblCogumeloB.setVisible(false);
-				lblCogumeloC.setVisible(false);
-				lblCogumeloD.setVisible(false);
-				
-				//Contador para pegar os valores randomicos da ArrayList em sequencia
-				contadorPulos++;
+				btnPular.addMouseListener(new MouseAdapter() {
+					
+					@Override
+					public void mouseClicked(MouseEvent arg0) {
+						
+						//Setar os cogumelos como não visiveis
+						lblCogumeloA.setVisible(false);
+						lblCogumeloB.setVisible(false);
+						lblCogumeloC.setVisible(false);
+						lblCogumeloD.setVisible(false);
+						
+						//Contador para pegar os valores randomicos da ArrayList em sequencia
+						contadorPulos++;
 
-				
-				//Alterar o texto dos labels, conforme o número randomico da ArrayList
-				lblPergunta.setText(MO_Perguntas.categoriaEscolhida.get(contadorPulos).getPergunta());
-				lblAlternativaA.setText(MO_Perguntas.categoriaEscolhida.get(contadorPulos).getAlternativaA());
-				lblAlternativaB.setText(MO_Perguntas.categoriaEscolhida.get(contadorPulos).getAlternativaB());
-				lblAlternativaC.setText(MO_Perguntas.categoriaEscolhida.get(contadorPulos).getAlternativaC());
-				lblAlternativaD.setText(MO_Perguntas.categoriaEscolhida.get(contadorPulos).getAlternativaD());
-				
-				
-				//Contar 3 pulos
-				contaPulos++;
-				if(contaPulos == 3) {
-					btnPular.setVisible(false);
-				}
-				
-				
-			}
-		});
+						
+						//Alterar o texto dos labels, conforme o número randomico da ArrayList
+						lblPergunta.setText(MO_Perguntas.categoriaEscolhida.get(contadorPulos).getPergunta());
+						lblAlternativaA.setText(MO_Perguntas.categoriaEscolhida.get(contadorPulos).getAlternativaA());
+						lblAlternativaB.setText(MO_Perguntas.categoriaEscolhida.get(contadorPulos).getAlternativaB());
+						lblAlternativaC.setText(MO_Perguntas.categoriaEscolhida.get(contadorPulos).getAlternativaC());
+						lblAlternativaD.setText(MO_Perguntas.categoriaEscolhida.get(contadorPulos).getAlternativaD());
+						
+						
+						
+						//Contar 3 pulos
+						contaPulos++;
+						if(contaPulos == 3) {
+							btnPular.setVisible(false);
+							
+							//Bloqueando o botão de pular
+							lblBloquearPular.setVisible(true);
+							lblBloquearPular.setIcon(new ImageIcon(getClass().getResource("/Bloquear_Botao.jpg")));
+						}
+						
+						
+					}
+				});
+		
+		
 		
 		
 		//Botão [Confirmar]
-		JButton btnConfirmar = new JButton("CONFIRMAR");
+		JLabel btnConfirmar = new JLabel("");
 		btnConfirmar.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnConfirmar.setBounds(45, 449, 148, 38);
+		btnConfirmar.setBounds(69, 449, 148, 38);
 		pnPrincipal.add(btnConfirmar);
 		
+				
+				//Função botão
+				btnConfirmar.addMouseListener(new MouseAdapter() {
+					
+					@Override
+					public void mouseClicked(MouseEvent arg0) {
+
+						
+						
+						
+						//Erro 1 - Caso usuario não selecione uma questão
+						if(CO_Jogo.alternativaEscolhida == 'E'){
+							CO_Jogo.erroJogo = 1;
+							CO_Jogo.mensagemErro ="Selecione uma das alternativas";
+								IG_Erro IGE = new IG_Erro();
+									IGE.setVisible(true);
+						}
+						
+						//Caso não haja erro, rodará o sistema
+						if(CO_Jogo.erroJogo == 0){
+							
+						//Setar os cogumelos como não visiveis
+						lblCogumeloA.setVisible(false);
+						lblCogumeloB.setVisible(false);
+						lblCogumeloC.setVisible(false);
+						lblCogumeloD.setVisible(false);
+						
+						//Setando os labels de ajuda como não visiveis
+						lblAjudaA.setVisible(false);
+						lblAjudaB.setVisible(false);
+						lblAjudaC.setVisible(false);
+						lblAjudaD.setVisible(false);
+							
+						//Contador para pegar os valores randomicos da ArrayList em sequencia
+						contador++;
+						int indice = MO_Perguntas.guardaPergunta.get(contador);
+						
+						//Contador de pulo
+						contadorPulos = contador;
+					
+						//Alterar o texto dos labels, conforme o número randomico da ArrayList
+						lblPergunta.setText(MO_Perguntas.categoriaEscolhida.get(indice).getPergunta());
+						lblAlternativaA.setText(MO_Perguntas.categoriaEscolhida.get(indice).getAlternativaA());
+						lblAlternativaB.setText(MO_Perguntas.categoriaEscolhida.get(indice).getAlternativaB());
+						lblAlternativaC.setText(MO_Perguntas.categoriaEscolhida.get(indice).getAlternativaC());
+						lblAlternativaD.setText(MO_Perguntas.categoriaEscolhida.get(indice).getAlternativaD());
+						
+						
+						//Gravar pontuação do jogo
+						if(CO_Jogo.alternativaEscolhida == MO_Perguntas.categoriaEscolhida.get(indice).getResposta()){
+							acertos++;
+							
+						}
+					
+						
+						//Fechar as opcoes quando chegar as 10 questões
+						if(contador == 10){
+							
+							//Guardar pontuação
+							MO_Players MOP = new MO_Players();
+							MOP.setNomePlayer(jogador);
+							MOP.setAcertosPlayer(acertos);
+							MO_Players.Players.add(MOP);
+								
+							//Abrindo componente do resultado
+							dispose();
+							IG_Ranking IGR = new IG_Ranking();
+							IGR.setVisible(true);
+							
+
+						}
+						
+						}
+						
+						//Deixando variaveis no valor padrão
+						CO_Jogo.alternativaEscolhida = 'E';
+						CO_Jogo.erroJogo = 0;
+					}
+				
+		});
+				
+
 		JLabel Background = new JLabel("");
-		Background.setIcon(new ImageIcon(getClass().getResource("/BG_Principal.jpg")));
+		Background.setIcon(new ImageIcon(getClass().getResource("/BG_Jogo.jpg")));
 		Background.setBounds(0, 0, 680, 530);
 		pnPrincipal.add(Background);
 		
-		//Função botão
-		btnConfirmar.addMouseListener(new MouseAdapter() {
-			
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
 
-				
-				
-				
-				//Erro 1 - Caso usuario não selecione uma questão
-				if(CO_Jogo.alternativaEscolhida == 'E'){
-					CO_Jogo.erroJogo = 1;
-					CO_Jogo.mensagemErro ="Selecione uma das alternativas";
-						IG_Erro IGE = new IG_Erro();
-							IGE.setVisible(true);
-				}
-				
-				//Caso não haja erro, rodará o sistema
-				if(CO_Jogo.erroJogo == 0){
-					
-				//Setar os cogumelos como não visiveis
-				lblCogumeloA.setVisible(false);
-				lblCogumeloB.setVisible(false);
-				lblCogumeloC.setVisible(false);
-				lblCogumeloD.setVisible(false);
-					
-				//Contador para pegar os valores randomicos da ArrayList em sequencia
-				contador++;
-				int indice = MO_Perguntas.guardaPergunta.get(contador);
-				
-				//Contador de pulo
-				contadorPulos = contador;
-			
-				//Alterar o texto dos labels, conforme o número randomico da ArrayList
-				lblPergunta.setText(MO_Perguntas.categoriaEscolhida.get(indice).getPergunta());
-				lblAlternativaA.setText(MO_Perguntas.categoriaEscolhida.get(indice).getAlternativaA());
-				lblAlternativaB.setText(MO_Perguntas.categoriaEscolhida.get(indice).getAlternativaB());
-				lblAlternativaC.setText(MO_Perguntas.categoriaEscolhida.get(indice).getAlternativaC());
-				lblAlternativaD.setText(MO_Perguntas.categoriaEscolhida.get(indice).getAlternativaD());
-				
-				
-				//Gravar pontuação do jogo
-				if(CO_Jogo.alternativaEscolhida == MO_Perguntas.categoriaEscolhida.get(indice).getResposta()){
-					acertos++;
-					
-				}
-			
-				
-				//Fechar as opcoes quando chegar as 10 questões
-				if(contador == 10){
-					
-					//Guardar pontuação
-					MO_Players MOP = new MO_Players();
-					MOP.setNomePlayer(jogador);
-					MOP.setAcertosPlayer(acertos);
-					MO_Players.Players.add(MOP);
-						
-					//Abrindo componente do resultado
-					dispose();
-					IG_Ranking IGR = new IG_Ranking();
-					IGR.setVisible(true);
-					
-
-				}
-				
-				}
-				
-				//Deixando variaveis no valor padrão
-				CO_Jogo.alternativaEscolhida = 'E';
-				CO_Jogo.erroJogo = 0;
-			}
-		});
 
 		
 	}
