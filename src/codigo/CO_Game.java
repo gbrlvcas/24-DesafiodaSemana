@@ -13,11 +13,11 @@ public class CO_Game extends CO_Formulario {
 		//Pergunta #1
 		MO_Perguntas p1 = new MO_Perguntas();
 
-		p1.setPergunta("Pergunta1");
-		p1.setAlternativaA("Alternativa1");
-		p1.setAlternativaB("Alternativa1");
-		p1.setAlternativaC("Alternativa1");
-		p1.setAlternativaD("Alternativa1");
+		p1.setPergunta("Qual jogo possui um personagem que é um marsupial?");
+		p1.setAlternativaA("Crash Bandicoot");
+		p1.setAlternativaB("Pepsi-Man");
+		p1.setAlternativaC("Driver");
+		p1.setAlternativaD("Sonic");
 		p1.setResposta('A');
 
 		MO_Perguntas.categoriaGame.add(p1);
@@ -25,59 +25,59 @@ public class CO_Game extends CO_Formulario {
 		//Pergunta #2
 		MO_Perguntas p2 = new MO_Perguntas();
 
-		p2.setPergunta("Pergunta2");
-		p2.setAlternativaA("Alternativa2");
-		p2.setAlternativaB("Alternativa2");
-		p2.setAlternativaC("Alternativa2");
-		p2.setAlternativaD("Alternativa2");
-		p2.setResposta('A');
+		p2.setPergunta("O Gran Turismo é um jogo de?");
+		p2.setAlternativaA("Luta");
+		p2.setAlternativaB("Corrida");
+		p2.setAlternativaC("RPG");
+		p2.setAlternativaD("Tabuleiro");
+		p2.setResposta('B');
 
 		MO_Perguntas.categoriaGame.add(p2);
 
 		//Pergunta #3
 		MO_Perguntas p3 = new MO_Perguntas();
 
-		p3.setPergunta("Pergunta3");
-		p3.setAlternativaA("Alternativa3");
-		p3.setAlternativaB("Alternativa3");
-		p3.setAlternativaC("Alternativa3");
-		p3.setAlternativaD("Alternativa3");
-		p3.setResposta('A');
+		p3.setPergunta("Qual nome do jogo que você enfrenta monstros gigantes?");
+		p3.setAlternativaA("Call of Duty");
+		p3.setAlternativaB("Burnout");
+		p3.setAlternativaC("Shadow of the Colossus");
+		p3.setAlternativaD("Resident Evil");
+		p3.setResposta('C');
 
 		MO_Perguntas.categoriaGame.add(p3);
 
 		//Pergunta #4
 		MO_Perguntas p4 = new MO_Perguntas();
 
-		p4.setPergunta("Pergunta4");
-		p4.setAlternativaA("Alternativa4");
-		p4.setAlternativaB("Alternativa4");
-		p4.setAlternativaC("Alternativa4");
-		p4.setAlternativaD("Alternativa4");
-		p4.setResposta('A');
+		p4.setPergunta("O personagem CJ, esta presente em qual GTA?");
+		p4.setAlternativaA("GTA IV");
+		p4.setAlternativaB("GTA Liberty City");
+		p4.setAlternativaC("GTA Vice City");
+		p4.setAlternativaD("GTA San Andreas");
+		p4.setResposta('D');
 
 		MO_Perguntas.categoriaGame.add(p4);
 
 		//Pergunta #5
 		MO_Perguntas p5 = new MO_Perguntas();
 
-		p5.setPergunta("Pergunta5");
-		p5.setAlternativaA("Alternativa5");
-		p5.setAlternativaB("Alternativa5");
-		p5.setAlternativaC("Alternativa5");
-		p5.setAlternativaD("Alternativa5");
-		p5.setResposta('A');
+		p5.setPergunta("Qual o tipo de jogo que o Bomberman proporciona?");
+		p5.setAlternativaA("Corridas por inumeros cenarios");
+		p5.setAlternativaB("Colocar bombas para terminar a fase");
+		p5.setAlternativaC("Atirar em animais voadores");
+		p5.setAlternativaD("Cuidar da fazenda");
+		p5.setResposta('B');
 
 		MO_Perguntas.categoriaGame.add(p5);
 
 		//Pergunta #6
 		MO_Perguntas p6 = new MO_Perguntas();
 
-		p6.setPergunta("Pergunta6");
-		p6.setAlternativaA("Alternativa6");
-		p6.setAlternativaB("Alternativa6");
-		p6.setAlternativaC("Alternativa6");
-		p6.setAlternativaD("Alternativa6");
+		p6.setPergunta("Qual jogo de PS2 você destroi carros insanamente?");
+		p6.setAlternativaA("Burnout");
+		p6.setAlternativaB("Metal Gear Solid");
+		p6.setAlternativaC("Gran Turismo");
+		p6.setAlternativaD("Midnight Club");
 		p6.setResposta('A');
 
 		MO_Perguntas.categoriaGame.add(p6);
@@ -85,24 +85,24 @@ public class CO_Game extends CO_Formulario {
 		//Pergunta #7
 		MO_Perguntas p7 = new MO_Perguntas();
 
-		p7.setPergunta("Pergunta7");
-		p7.setAlternativaA("Alternativa7");
-		p7.setAlternativaB("Alternativa7");
-		p7.setAlternativaC("Alternativa7");
-		p7.setAlternativaD("Alternativa7");
-		p7.setResposta('A');
+		p7.setPergunta("Qual jogo de RPG Online possui a classe Pikeman?");
+		p7.setAlternativaA("Maple Story");
+		p7.setAlternativaB("Priston Tale");
+		p7.setAlternativaC("Ragnarok");
+		p7.setAlternativaD("Grand Chase");
+		p7.setResposta('B');
 
 		MO_Perguntas.categoriaGame.add(p7);
 
 		//Pergunta #8
 		MO_Perguntas p8 = new MO_Perguntas();
 
-		p8.setPergunta("Pergunta8");
-		p8.setAlternativaA("Alternativa8");
-		p8.setAlternativaB("Alternativa8");
-		p8.setAlternativaC("Alternativa8");
-		p8.setAlternativaD("Alternativa8");
-		p8.setResposta('A');
+		p8.setPergunta("Qual jogo é considero extremamente dificil?");
+		p8.setAlternativaA("Assassins Creed");
+		p8.setAlternativaB("The Witcher 3");
+		p8.setAlternativaC("Dark Souls 3");
+		p8.setAlternativaD("God of War");
+		p8.setResposta('C');
 
 		MO_Perguntas.categoriaGame.add(p8);
 
@@ -121,23 +121,23 @@ public class CO_Game extends CO_Formulario {
 		//Pergunta #10
 		MO_Perguntas p10 = new MO_Perguntas();
 
-		p10.setPergunta("Pergunta10");
-		p10.setAlternativaA("Alternativa10");
-		p10.setAlternativaB("Alternativa10");
-		p10.setAlternativaC("Alternativa10");
-		p10.setAlternativaD("Alternativa10");
-		p10.setResposta('A');
+		p10.setPergunta("Qual jogo do Assassins Creed se passa no egito?");
+		p10.setAlternativaA("AC Black Flag");
+		p10.setAlternativaB("AC Syndicate");
+		p10.setAlternativaC("AC Origins");
+		p10.setAlternativaD("AC Brotherhood");
+		p10.setResposta('C');
 
 		MO_Perguntas.categoriaGame.add(p10);
 
 		//Pergunta #11
 		MO_Perguntas p11 = new MO_Perguntas();
 
-		p11.setPergunta("Pergunta11");
-		p11.setAlternativaA("Alternativa11");
-		p11.setAlternativaB("Alternativa11");
-		p11.setAlternativaC("Alternativa11");
-		p11.setAlternativaD("Alternativa11");
+		p11.setPergunta("Qual jogo você joga com o personagem Guerra e Morte?");
+		p11.setAlternativaA("Darksiders I e II");
+		p11.setAlternativaB("God of War I e II");
+		p11.setAlternativaC("Need for Speed Mostwanted");
+		p11.setAlternativaD("Mercenaries I e II");
 		p11.setResposta('A');
 
 		MO_Perguntas.categoriaGame.add(p11);
@@ -145,47 +145,47 @@ public class CO_Game extends CO_Formulario {
 		//Pergunta #12
 		MO_Perguntas p12 = new MO_Perguntas();
 
-		p12.setPergunta("Pergunta12");
-		p12.setAlternativaA("Alternativa12");
-		p12.setAlternativaB("Alternativa12");
-		p12.setAlternativaC("Alternativa12");
-		p12.setAlternativaD("Alternativa12");
-		p12.setResposta('A');
+		p12.setPergunta("Qual nome do vilao principal de Crash Bandicoot?");
+		p12.setAlternativaA("Bowser");
+		p12.setAlternativaB("DR. N Cortex");
+		p12.setAlternativaC("Zeus");
+		p12.setAlternativaD("Razor");
+		p12.setResposta('B');
 
 		MO_Perguntas.categoriaGame.add(p12);
 
 		//Pergunta #13
 		MO_Perguntas p13 = new MO_Perguntas();
 
-		p13.setPergunta("Pergunta13");
-		p13.setAlternativaA("Alternativa13");
-		p13.setAlternativaB("Alternativa13");
-		p13.setAlternativaC("Alternativa13");
-		p13.setAlternativaD("Alternativa13");
-		p13.setResposta('A');
+		p13.setPergunta("Qual jogo possui o sufixo Modern Warfare?");
+		p13.setAlternativaA("Medal of Honor");
+		p13.setAlternativaB("Battlefield");
+		p13.setAlternativaC("Call of Duty");
+		p13.setAlternativaD("Splinter Cell");
+		p13.setResposta('C');
 
 		MO_Perguntas.categoriaGame.add(p13);
 
 		//Pergunta #14
 		MO_Perguntas p14 = new MO_Perguntas();
 
-		p14.setPergunta("Pergunta14");
-		p14.setAlternativaA("Alternativa14");
-		p14.setAlternativaB("Alternativa14");
-		p14.setAlternativaC("Alternativa14");
-		p14.setAlternativaD("Alternativa14");
-		p14.setResposta('A');
+		p14.setPergunta("Qual jogo de zumbi esta na edição 7?");
+		p14.setAlternativaA("Call of Duty");
+		p14.setAlternativaB("Residen Evil");
+		p14.setAlternativaC("Dead Island");
+		p14.setAlternativaD("Left 4 Dead");
+		p14.setResposta('B');
 
 		MO_Perguntas.categoriaGame.add(p14);
 
 		//Pergunta #15
 		MO_Perguntas p15 = new MO_Perguntas();
 
-		p15.setPergunta("Pergunta15");
-		p15.setAlternativaA("Alternativa15");
-		p15.setAlternativaB("Alternativa15");
-		p15.setAlternativaC("Alternativa15");
-		p15.setAlternativaD("Alternativa15");
+		p15.setPergunta("Qual jogo possui o famoso Fatality?");
+		p15.setAlternativaA("Mortal Kombat");
+		p15.setAlternativaB("Street Fighter");
+		p15.setAlternativaC("Killer Instinct");
+		p15.setAlternativaD("Tekken");
 		p15.setResposta('A');
 
 		MO_Perguntas.categoriaGame.add(p15);
@@ -193,62 +193,63 @@ public class CO_Game extends CO_Formulario {
 		//Pergunta #16
 		MO_Perguntas p16 = new MO_Perguntas();
 
-		p16.setPergunta("Pergunta16");
-		p16.setAlternativaA("Alternativa16");
-		p16.setAlternativaB("Alternativa16");
-		p16.setAlternativaC("Alternativa16");
-		p16.setAlternativaD("Alternativa16");
-		p16.setResposta('A');
+		p16.setPergunta("Qual modo de jogo mais famoso no momento?");
+		p16.setAlternativaA("RPG");
+		p16.setAlternativaB("Tiro");
+		p16.setAlternativaC("Corrida");
+		p16.setAlternativaD("Battle Royale");
+		p16.setResposta('D');
 
 		MO_Perguntas.categoriaGame.add(p16);
 
 		//Pergunta #17
 		MO_Perguntas p17 = new MO_Perguntas();
 
-		p17.setPergunta("Pergunta17");
-		p17.setAlternativaA("Alternativa17");
-		p17.setAlternativaB("Alternativa17");
-		p17.setAlternativaC("Alternativa17");
-		p17.setAlternativaD("Alternativa17");
-		p17.setResposta('A');
+		p17.setPergunta("Qual jogo de corrida de rua mais famoso?");
+		p17.setAlternativaA("Project Cars");
+		p17.setAlternativaB("Need for Speed");
+		p17.setAlternativaC("One Rush");
+		p17.setAlternativaD("Forza Horizon");
+		p17.setResposta('B');
 
 		MO_Perguntas.categoriaGame.add(p17);
 
 		//Pergunta #18
 		MO_Perguntas p18 = new MO_Perguntas();
 
-		p18.setPergunta("Pergunta18");
-		p18.setAlternativaA("Alternativa18");
-		p18.setAlternativaB("Alternativa18");
-		p18.setAlternativaC("Alternativa18");
-		p18.setAlternativaD("Alternativa18");
-		p18.setResposta('A');
+		p18.setPergunta("O novo God of War, se passa na mitolgia?");
+		p18.setAlternativaA("Grega");
+		p18.setAlternativaB("Nordica");
+		p18.setAlternativaC("Egipcia");
+		p18.setAlternativaD("Oriental");
+		p18.setResposta('B');
 
 		MO_Perguntas.categoriaGame.add(p18);
 
 		//Pergunta #19
 		MO_Perguntas p19 = new MO_Perguntas();
 
-		p19.setPergunta("Pergunta19");
-		p19.setAlternativaA("Alternativa19");
-		p19.setAlternativaB("Alternativa19");
-		p19.setAlternativaC("Alternativa19");
-		p19.setAlternativaD("Alternativa19");
-		p19.setResposta('A');
+		p19.setPergunta("Qual jogo de tiro que possuia a versão 1.6?");
+		p19.setAlternativaA("Killer Zone");
+		p19.setAlternativaB("Destiny");
+		p19.setAlternativaC("Half Life");
+		p19.setAlternativaD("Counter-Strike");
+		p19.setResposta('D');
 
 		MO_Perguntas.categoriaGame.add(p19);
 
 		//Pergunta #20
 		MO_Perguntas p20 = new MO_Perguntas();
 
-		p20.setPergunta("Pergunta20");
-		p20.setAlternativaA("Alternativa20");
-		p20.setAlternativaB("Alternativa20");
-		p20.setAlternativaC("Alternativa20");
-		p20.setAlternativaD("Alternativa20");
+		p20.setPergunta("Qual RPG 2D é jogado a mais tempo?");
+		p20.setAlternativaA("Tibia");
+		p20.setAlternativaB("Ragnarok");
+		p20.setAlternativaC("Maple Story");
+		p20.setAlternativaD("Gunbound");
 		p20.setResposta('A');
 
 		MO_Perguntas.categoriaGame.add(p20);
+
 
 		
 	}
