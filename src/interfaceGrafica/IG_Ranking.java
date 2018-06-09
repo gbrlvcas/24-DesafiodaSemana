@@ -2,37 +2,33 @@ package interfaceGrafica;
 
 
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-
-import codigo.CO_Jogo;
-import modelo.MO_Perguntas;
-
-import javax.swing.JLabel;
+import java.awt.Color;
 import java.awt.Font;
-import javax.swing.SwingConstants;
-
-import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import javax.swing.JCheckBox;
-import javax.swing.JRadioButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+
 import javax.swing.ImageIcon;
-import java.awt.Color;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
+
+import codigo.CO_Ranking;
+import modelo.MO_Players;
 
 
 public class IG_Ranking extends JFrame {
 
 	private JPanel pnPrincipal;
 
-//
+
+
 
 	
 	//Interface Grafica do Jogo
 	public IG_Ranking() {
+
 		
 		setUndecorated(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -73,7 +69,9 @@ public class IG_Ranking extends JFrame {
 		lblSair.setBounds(288, 415, 147, 54);
 		pnPrincipal.add(lblSair);
 		
-		JLabel lblPrimeiro = new JLabel("");
+
+		
+		JLabel lblPrimeiro = new JLabel();
 		lblPrimeiro.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lblPrimeiro.setForeground(new Color(255, 255, 0));
 		lblPrimeiro.setBounds(363, 210, 160, 26);
@@ -90,6 +88,28 @@ public class IG_Ranking extends JFrame {
 		lblTerceiro.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lblTerceiro.setBounds(363, 296, 160, 26);
 		pnPrincipal.add(lblTerceiro);
+		
+		//Adicionar ao rankink
+		if(MO_Players.Players.size() == 1){
+			lblPrimeiro.setText(MO_Players.Players.get(0).getNomePlayer());
+			
+		}else if(MO_Players.Players.size() == 2){
+
+			lblPrimeiro.setText(MO_Players.Players.get(0).getNomePlayer());
+			lblSegundo.setText(MO_Players.Players.get(1).getNomePlayer());
+			
+			
+		}else if(MO_Players.Players.size() == 3){
+
+			lblPrimeiro.setText(MO_Players.Players.get(0).getNomePlayer());
+			lblSegundo.setText(MO_Players.Players.get(1).getNomePlayer());
+			lblTerceiro.setText(MO_Players.Players.get(2).getNomePlayer());
+			
+		}
+		
+		
+		
+		
 		
 		JLabel lblBackground = new JLabel("");
 		lblBackground.setFont(new Font("Tahoma", Font.BOLD, 18));

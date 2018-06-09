@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import codigo.CO_Jogo;
+import codigo.CO_Ranking;
 import modelo.MO_Perguntas;
 import modelo.MO_Players;
 
@@ -36,7 +37,7 @@ public class IG_Jogo extends JFrame {
 	public static int contadorPulos = 0;
 	public static String jogador = "";
 	public static int acertos = 0;
-	public static int indice = MO_Perguntas.guardaPergunta.get(contador);
+	public static int indice = 0;
 
 	
 	//Interface Grafica do Jogo
@@ -408,6 +409,13 @@ public class IG_Jogo extends JFrame {
 						//Caso não haja erro, rodará o sistema
 						if(CO_Jogo.erroJogo == 0){
 							
+							//Gravar pontuação do jogo
+							if(CO_Jogo.alternativaEscolhida == MO_Perguntas.categoriaEscolhida.get(indice).getResposta()){
+								acertos++;
+
+		
+							}
+							
 						//Setar os cogumelos como não visiveis
 						lblCogumeloA.setVisible(false);
 						lblCogumeloB.setVisible(false);
@@ -422,7 +430,8 @@ public class IG_Jogo extends JFrame {
 							
 						//Contador para pegar os valores randomicos da ArrayList em sequencia
 						contador++;
-						int indice = MO_Perguntas.guardaPergunta.get(contador);
+						indice = MO_Perguntas.guardaPergunta.get(contador);
+						
 						
 						//Contador de pulo
 						contadorPulos = contador;
@@ -435,24 +444,24 @@ public class IG_Jogo extends JFrame {
 						lblAlternativaD.setText(MO_Perguntas.categoriaEscolhida.get(indice).getAlternativaD());
 						
 						
-						//Gravar pontuação do jogo
-						if(CO_Jogo.alternativaEscolhida == MO_Perguntas.categoriaEscolhida.get(indice).getResposta()){
-							acertos++;
-							
-						}
+
 					
 						
 						//Fechar as opcoes quando chegar as 10 questões
 						if(contador == 10){
 							
 							//Guardar pontuação
-							MO_Players MOP = new MO_Players();
+							MO_Players MOwP = new MO_Players();
 							MOP.setNomePlayer(jogador);
 							MOP.setAcertosPlayer(acertos);
 							MO_Players.Players.add(MOP);
 								
 							//Abrindo componente do resultado
 							dispose();
+							
+							CO_Ranking  COR = new CO_Ranking();
+							COR.gerarRanking();
+							
 							IG_Ranking IGR = new IG_Ranking();
 							IGR.setVisible(true);
 							

@@ -72,7 +72,7 @@ public class IG_Erro extends JFrame {
 		
 		JLabel Background = new JLabel("");
 		Background.setBorder(new LineBorder(new Color(0, 0, 0)));
-		Background.setIcon(new ImageIcon("C:\\Users\\Gbrlvcas\\Desktop\\Programacao\\24-DesafiodaSemana\\resources\\BG_Erro2.jpg"));
+		Background.setIcon(new ImageIcon(getClass().getResource("/BG_Erro2.jpg")));
 		Background.setBounds(0, 26, 450, 163);
 		pnlErro.add(Background);
 	}

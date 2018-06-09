@@ -78,6 +78,9 @@ public class IG_TelaInicial extends JFrame {
 				MO_Perguntas.categoriaGame.clear();
 				MO_Perguntas.categoriaMusica.clear();
 				MO_Perguntas.categoriaProway.clear();
+			
+				
+
 				
 				
 				//Pegar os valores
@@ -89,6 +92,12 @@ public class IG_TelaInicial extends JFrame {
 				COJ.iniciarJogo(nomePlayer, categoria);
 				if(COJ.erroLogin == 0) {
 				dispose();
+				IG_Jogo.contador = 0;
+				IG_Jogo.contadorPulos = 0;
+				IG_Jogo.contaPulos = 0;
+				IG_Jogo.indice = 0;
+				IG_Jogo.acertos = 0;
+				
 				}
 			}
 		});

@@ -81,7 +81,7 @@ public class CO_Jogo{
 			
 			for (MO_Perguntas MOP : MO_Perguntas.categoriaMusica){
 				MO_Perguntas.categoriaEscolhida.add(MOP);
-				System.out.println("Teste: "+MOP.getPergunta());
+				
 				
 			}
 		}
