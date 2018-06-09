@@ -451,7 +451,7 @@ public class IG_Jogo extends JFrame {
 						if(contador == 10){
 							
 							//Guardar pontuação
-							MO_Players MOwP = new MO_Players();
+							MO_Players MOP = new MO_Players();
 							MOP.setNomePlayer(jogador);
 							MOP.setAcertosPlayer(acertos);
 							MO_Players.Players.add(MOP);
